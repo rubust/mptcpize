@@ -1,8 +1,8 @@
 .DEFAULT_GOAL := all
-CC=gcc
+#CC=gcc
 
 mptcpize:
-	$(CC) -o mptcpize mptcpize.c
+	$(CC) -o mptcpize mptcpize.c -largp
 
 mptcpwrap:
 	$(CC) -shared -o libmptcpwrap.so -fPIC mptcpwrap.c

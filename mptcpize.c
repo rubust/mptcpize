@@ -17,7 +17,7 @@
 #include <argp.h>
 #include <dlfcn.h>
 #include <errno.h>
-#include <error.h>
+//#include <error.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -55,6 +55,11 @@ static struct argp argp = { 0, 0, 0, argp_doc, 0, 0, 0 };
 void help(void)
 {
 	fprintf(stderr, "%s", argp_doc);
+}
+
+static void error(int status, int errnum, const char *format, ...)
+{
+	fprintf(stderr, "%s\n", format);
 }
 
 static int run(int argc, char *av[])
